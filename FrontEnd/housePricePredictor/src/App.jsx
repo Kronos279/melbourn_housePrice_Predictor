@@ -32,7 +32,7 @@ function App() {
 
   // 3. LOGIC: Submit the form to the backend
   const handleSubmit = async (e) => {
-    e.preventDefault() // Stop page refresh
+    e.preventDefault() 
     setLoading(true)
     setError(null)
     setPrice(null)

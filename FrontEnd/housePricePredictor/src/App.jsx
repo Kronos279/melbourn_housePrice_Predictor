@@ -37,6 +37,8 @@ function App() {
     setError(null)
     setPrice(null)
 
+  const API_BACKEND_URL = import.meta.env.VITE_API_BACKEND_URL;
+
     try {
       // Create the object to send (Convert Strings to Numbers)
       const payload = {
@@ -49,10 +51,10 @@ function App() {
         BuildingArea: Number(formData.BuildingArea),
       }
 
-      console.log("Sending this to backend:", payload) // Debugging
+      console.log("Sending this to backend:", payload) 
 
       // Send via Axios
-      const response = await axios.post('http://127.0.0.1:8000/predict', payload)
+      const response = await axios.post(`${API_BACKEND_URL}/predict`, payload)
       
       // Save the result
       setPrice(response.data.predicted_price)
